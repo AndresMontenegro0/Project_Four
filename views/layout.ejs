@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>WikiSports</title>
+	<link rel="stylesheet" type="text/css" href="/style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	// <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script> 
+	<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>     <!-- link to the jQuery library (see http://jquery.com) -->
+
+</head> 
+<body>
+	<div id="navBox">
+		<div id="logo">
+			<img src="/images/logo.png"/>
+		</div>
+    	<ul>
+	        <li><a href="/">HOME</a></li>
+	        <li><a href="/rooms">DISPLAY</a></li>
+	        <li><a href="#">MISC.</a></li>
+     	</ul>
+
+     	<div class="search">
+     		<form>
+		      	<input type="search" placeholder="search">
+		    </form>
+		    <img src="/images/search.png"/>
+		</div>
+     	<div class="logout">
+		    <form action="/users/logout?_method=DELETE" method="post">
+		      	<input type="submit" value="logout">
+		    </form>
+		</div>
+    </div>
+	<%- body %>
+</body>
+</html>

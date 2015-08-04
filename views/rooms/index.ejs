@@ -1,0 +1,35 @@
+
+<h3>Welcome</h3>
+<div id="create-article">
+	<button><a href="/rooms/new">Create new Rooms</a></button>
+</div>
+
+<div id="list-box">
+	<% rooms.forEach(function(room, i) { %>
+		<div class="accordion">
+			<input type="checkbox"
+					name="section"
+					id="section<%=i%>"
+					value="1">
+			<label for="section<%=i%>"><%= room.room_type %></label>
+			<div class="section">
+				<table>
+					<tr>
+						<th>Description</th>
+						<th>Created By</th>
+						<th>Last Modified</th>
+					</tr>
+					<tr>
+						<td><%= room.content%> <a href="/rooms/<%=room.id%>">Read more...</a></td>
+						<td><%= room.max_people%></td>
+						<td><%= room.price%></td>
+						<td><%= room.hotel_name%></td>
+						<td><%= room.organizer%></td>
+						<td><%= room.created_at%></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	<%});%>
+</div>
+
