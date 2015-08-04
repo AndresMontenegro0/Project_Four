@@ -2,16 +2,22 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>WikiSports</title>
+	<title>Hotel Transelvania</title>
 	<link rel="stylesheet" type="text/css" href="/style.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-	// <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script> 
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>     <!-- link to the jQuery library (see http://jquery.com) -->
 
 </head> 
 <body>
 	<div id="navBox">
-		<div id="logo">
+		<!-- <div id="logo">
 			<img src="/images/logo.png"/>
 		</div>
     	<ul>
@@ -30,7 +36,22 @@
 		    <form action="/users/logout?_method=DELETE" method="post">
 		      	<input type="submit" value="logout">
 		    </form>
-		</div>
+		</div> -->
+		<div class="pure-menu pure-menu-horizontal">
+    <ul class="pure-menu-list">
+        <li class="pure-menu-item pure-menu-selected"><a href="/" class="pure-menu-link">HOME</a></li>
+        <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+            <a href="/rooms" id="menuLink1" class="pure-menu-link">Rooms</a>
+            <ul class="pure-menu-children">
+                <li class="pure-menu-item"><a href="#" class="pure-menu-link"><form action="/users/logout?_method=DELETE" method="post">
+		      	<input type="submit" value="logout">
+		    </form></a></li>
+                <li class="pure-menu-item"><a href="#" class="pure-menu-link">Twitter</a></li>
+                <li class="pure-menu-item"><a href="#" class="pure-menu-link">Tumblr Blog</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
     </div>
 	<%- body %>
 </body>
