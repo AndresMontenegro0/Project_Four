@@ -1,1 +1,1 @@
-module.exports = require('./' + (process.env.NODE_ENV || 'developemnt') + '.json');
+module.exports = require('./' + (process.env.NODE_ENV || 'development') + '.json');

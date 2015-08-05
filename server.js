@@ -15,11 +15,10 @@ var express         = require('express'),
 var PORT        = process.env.PORT || 3000;
 var MONGOURI    = process.env.MONGOLAB_URI || 'mongodb://localhost:27017/Hotel';
 var knoxClient  = knox.createClient({
-    key: config.S3Accesskey,
-    secret: config.S3secret,
+    key: config.S3AccessKey,
+    secret: config.S3Secret,
     bucket: config.S3Bucket
-
-})
+});
 
     //SET
 server.set('views', './views');
