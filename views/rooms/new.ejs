@@ -6,8 +6,19 @@
 	</div>
 
 	<div class="input-group">
+	  <span class="input-group-addon">$</span>
+	  <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" name="room[price]">
+	  <span class="input-group-addon">.00</span>
+	</div>
+	
+	<div class="input-group">
 	  <span class="input-group-addon" id="basic-addon1">No. of people</span>
 	  <input type="text" class="form-control" aria-describedby="basic-addon1" name="room[max_people]">
+	</div>
+
+	<div class="input-group">
+	<span class="input-group-addon" id="basic-addon1">Description</span>
+	<textarea class="form-control" rows="3" name="room[content]"></textarea>
 	</div>
 
 	<div class="input-group">
@@ -35,11 +46,6 @@
 	  <input type="text" class="form-control" aria-describedby="basic-addon1" name="room[zipcode]">
 	</div>
 
-	<div class="input-group">
-	  <span class="input-group-addon">$</span>
-	  <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" name="room[price]">
-	  <span class="input-group-addon">.00</span>
-	</div>
 </form>
 
 
