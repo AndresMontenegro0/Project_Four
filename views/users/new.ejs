@@ -1,41 +1,64 @@
-<div id="welcome">
-<h1> Please sign in!</h1>
-</div>
-	
 
-
-<form action="/users" method="post" id="signup_form">
-	<div class="form-header">Please Sign Up</div>
-	<div class="form-grp">
-
-	    <label>First Name: </label>
-	    <input type="text" name="user[first_name]">
-
-	    <label>Last Name: </label>
-	    <input type="text" name="user[last_name]">
-
-	    <label>Email: </label>
-	    <input type="text" name="user[email]">
-
-	    <label>Password: </label>
-	    <input type="password" name="user[password]">
-
-	    <label>Name of your Hotel: </label>
-	    <input type="text" name="user[hotel_name]">
-
-	    <label>Address: </label>
-	    <input type="text" name="user[street_address]">
-
-	    <label>City: </label>
-	    <input type="text" name="user[city]">
-
-	    <label>State: </label>
-	    <input type="text" name="user[state]">
-
-	    <label>Zipcode: </label>
-	    <input type="text" name="user[zipcode]">
-	    	    
-	</div>
-	<input type="submit" value="Sign Up">
-	
+<form class="form-horizontal" action="/users" method="post">
+  <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 control-label">First Name</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="inputEmail3" placeholder="First Name" name="user[first_name]">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 control-label">Last Name</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="inputEmail3" placeholder="Last Name" name="user[last_name]">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+    <div class="col-sm-10">
+      <input type="email" class="form-control" id="inputEmail3" placeholder="Email" name="user[email]">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 control-label">Name of your Hotel</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="inputEmail3" placeholder="Hotel Name" name="user[hotel_name]">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 control-label">Address</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="inputEmail3" placeholder="Address" name="user[street_address]">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 control-label">City</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="inputEmail3" placeholder="City" name="user[city]">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 control-label">State</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="inputEmail3" placeholder="State" name="user[state]">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 control-label">Zipcode</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="inputEmail3" placeholder="zipcode" name="user[zipcode]">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+    <div class="col-sm-10">
+      <input type="password" class="form-control" id="inputPassword3" placeholder="Password" name="user[password]">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-default">Sign up</button>
+    </div>
+  </div>
 </form>
+
+

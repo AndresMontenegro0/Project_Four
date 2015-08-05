@@ -3,56 +3,58 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Hotel Transelvania</title>
-	<link rel="stylesheet" type="text/css" href="/style.css">
-	<!-- Latest compiled and minified CSS -->
+	<!-- <link rel="stylesheet" type="text/css" href="/style.css"> -->
+<!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
 <!-- Optional theme -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-	<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>     <!-- link to the jQuery library (see http://jquery.com) -->
+
+
 
 </head> 
 <body>
-	<div id="navBox">
-		<!-- <div id="logo">
-			<img src="/images/logo.png"/>
-		</div>
-    	<ul>
-	        <li><a href="/">HOME</a></li>
-	        <li><a href="/rooms">DISPLAY</a></li>
-	        <li><a href="#">MISC.</a></li>
-     	</ul>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Brand</a>
+    </div>
 
-     	<div class="search">
-     		<form>
-		      	<input type="search" placeholder="search">
-		    </form>
-		    <img src="/images/search.png"/>
-		</div>
-     	<div class="logout">
-		    <form action="/users/logout?_method=DELETE" method="post">
-		      	<input type="submit" value="logout">
-		    </form>
-		</div> -->
-		<div class="pure-menu pure-menu-horizontal">
-    <ul class="pure-menu-list">
-        <li class="pure-menu-item pure-menu-selected"><a href="/" class="pure-menu-link">HOME</a></li>
-        <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
-            <a href="/rooms" id="menuLink1" class="pure-menu-link">Rooms</a>
-            <ul class="pure-menu-children">
-                <li class="pure-menu-item"><a href="#" class="pure-menu-link"><form action="/users/logout?_method=DELETE" method="post">
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Home</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">User <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a><form action="/users/logout?_method=DELETE" method="post">
 		      	<input type="submit" value="logout">
 		    </form></a></li>
-                <li class="pure-menu-item"><a href="#" class="pure-menu-link">Twitter</a></li>
-                <li class="pure-menu-item"><a href="#" class="pure-menu-link">Tumblr Blog</a></li>
-            </ul>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
         </li>
-    </ul>
-</div>
-    </div>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
 	<%- body %>
+
 </body>
 </html>

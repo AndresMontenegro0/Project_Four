@@ -56,9 +56,9 @@ server.get('/', function(req, res) {
 
 
 //CATCH ALL ROUTES
-server.use(function(req, res) {
-    res.send("You lost?");
-});
+// server.use(function(req, res) {
+//     res.send("You lost?");
+// });
 
 //DATABASE + server
 mongoose.connect(MONGOURI);
