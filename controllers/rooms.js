@@ -1,6 +1,6 @@
 var express 	= require('express'),
 	router 		= express.Router(),
-	Room 	= require('../models/room.js');
+	Room 		= require('../models/room.js');
 
 //INDEX
 

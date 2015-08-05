@@ -7,15 +7,24 @@ var express         = require('express'),
     mongoose        = require('mongoose'),
     morgan          = require('morgan'),
     session         = require('express-session'),
+    knox            = require('knox'),
+    config          = require('./config/config.js'),
     expressLayouts  = require('express-ejs-layouts');
 
 //This sets it to the porcess PORT. If it's defined on Heroku, otherwise it will go to 3000
-var PORT = process.env.PORT || 3000;
-var MONGOURI = process.env.MONGOLAB_URI || 'mongodb://localhost:27017/Hotel';
+var PORT        = process.env.PORT || 3000;
+var MONGOURI    = process.env.MONGOLAB_URI || 'mongodb://localhost:27017/Hotel';
+var knoxClient  = knox.createClient({
+    key: config.S3Accesskey,
+    secret: config.S3secret,
+    bucket: config.S3Bucket
+
+})
 
     //SET
 server.set('views', './views');
 server.set('view engine', 'ejs');
+server.set('host', config.host);
 
 //USE
 //need more explanation for resave and saveUnitialized
