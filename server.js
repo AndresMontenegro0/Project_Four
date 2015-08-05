@@ -7,6 +7,7 @@ var express         = require('express'),
     mongoose        = require('mongoose'),
     morgan          = require('morgan'),
     session         = require('express-session'),
+    bootstrap       = require('bootstrap'),
     expressLayouts  = require('express-ejs-layouts');
 
 //This sets it to the porcess PORT. If it's defined on Heroku, otherwise it will go to 3000
@@ -48,9 +49,9 @@ server.get('/', function(req, res) {
 
 
 //CATCH ALL ROUTES
-server.use(function(req, res) {
-    res.send("You lost?");
-});
+// server.use(function(req, res) {
+//     res.send("You lost?");
+// });
 
 //DATABASE + server
 mongoose.connect(MONGOURI);
