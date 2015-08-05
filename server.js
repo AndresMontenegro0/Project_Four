@@ -7,7 +7,6 @@ var express         = require('express'),
     mongoose        = require('mongoose'),
     morgan          = require('morgan'),
     session         = require('express-session'),
-    bootstrap       = require('bootstrap'),
     expressLayouts  = require('express-ejs-layouts');
 
 //This sets it to the porcess PORT. If it's defined on Heroku, otherwise it will go to 3000
