@@ -1,6 +1,8 @@
 var express 	= require('express'),
 	router 		= express.Router(),
-	Room 		= require('../models/room.js');
+	map 		= require('googlemaps'),
+	Room 	    = require('../models/room.js');
+
 
 //INDEX
 
