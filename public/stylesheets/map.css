@@ -1,11 +1,2 @@
-#map-canvas {
-    width: 50%;
-    min-height: 713px;
-    margin: 0;
-    padding: 15px;
-    position: relative; right: 0; bottom: 0;
-    z-index: 1;
-    float: right;
-}
-
+.map { height: 400px; }
 
