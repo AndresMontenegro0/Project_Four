@@ -8,26 +8,25 @@ var express         = require('express'),
     morgan          = require('morgan'),
     session         = require('express-session'),
     knox            = require('knox'),
-    config          = require('./config/config.js'),
     expressLayouts  = require('express-ejs-layouts');
 
 //This sets it to the porcess PORT. If it's defined on Heroku, otherwise it will go to 3000
 var PORT        = process.env.PORT || 3000;
 var MONGOURI    = process.env.MONGOLAB_URI || 'mongodb://localhost:27017/Hotel';
-var knoxClient  = knox.createClient({
-    key: config.S3AccessKey,
-    secret: config.S3Secret,
-    bucket: config.S3Bucket
-});
+// var knoxClient  = knox.createClient({
+//     key: config.S3AccessKey,
+//     secret: config.S3Secret,
+//     bucket: config.S3Bucket
+// });
 
     //SET
 server.set('views', './views');
 server.set('view engine', 'ejs');
-server.set('host', config.host);
+// server.set('host', config.host);
 
 //USE
 //need more explanation for resave and saveUnitialized
-server.use(session( {
+server.use(session({
     secret: 'Hotel',
     resave: true,
     saveUnitialized: false
@@ -50,15 +49,17 @@ server.use('/rooms', roomController);
 var userController = require('./controllers/users.js');
 server.use('/users', userController);
 
+require('./controllers/s3')(server);
+
 server.get('/', function(req, res) {
     res.render('welcome');
 })
 
 
 //CATCH ALL ROUTES
-// server.use(function(req, res) {
-//     res.send("You lost?");
-// });
+server.use(function(req, res) {
+    res.send("You lost?");
+});
 
 //DATABASE + server
 mongoose.connect(MONGOURI);
