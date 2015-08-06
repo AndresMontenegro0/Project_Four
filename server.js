@@ -13,11 +13,6 @@ var express         = require('express'),
 //This sets it to the porcess PORT. If it's defined on Heroku, otherwise it will go to 3000
 var PORT        = process.env.PORT || 3000;
 var MONGOURI    = process.env.MONGOLAB_URI || 'mongodb://localhost:27017/Hotel';
-// var knoxClient  = knox.createClient({
-//     key: config.S3AccessKey,
-//     secret: config.S3Secret,
-//     bucket: config.S3Bucket
-// });
 
     //SET
 server.set('views', './views');
