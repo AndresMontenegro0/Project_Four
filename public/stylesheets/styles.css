@@ -1,0 +1,20 @@
+
+ #scroll-rooms {
+    max-height: 713px;
+    padding: 0;
+    overflow-y: scroll;
+    width: 50%;
+ }
+
+.group-list {
+  position: relative;
+  top: 50%;
+  /* Set rules to fill background */
+  min-height: 30vh;
+  min-width: 1024px;
+	
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+  z-index: 0;
+}
