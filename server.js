@@ -7,7 +7,7 @@ var express         = require('express'),
     mongoose        = require('mongoose'),
     morgan          = require('morgan'),
     session         = require('express-session'),
-    map         = require('googlemaps'),
+    map             = require('googlemaps'),
     expressLayouts  = require('express-ejs-layouts');
 
 //This sets it to the porcess PORT. If it's defined on Heroku, otherwise it will go to 3000
@@ -44,7 +44,7 @@ var userController = require('./controllers/users.js');
 server.use('/users', userController);
 
 server.get('/', function(req, res) {
-    res.render('welcome');
+    res.render('welcome', {currentUser: req.session.currentUser});
 })
 
 
