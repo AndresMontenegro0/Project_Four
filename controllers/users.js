@@ -3,6 +3,11 @@ var express = require("express"),
     User    = require("../models/user.js");
     bcrypt = require('bcrypt');
 
+
+// router.get('/', function(req, res) {
+// 	console.log(req.session.currentUser);
+// });
+
 // NEW
 
 router.get("/new", function (req, res) {
@@ -37,7 +42,9 @@ router.post('/login', function(req, res) {
 		if(user) {
 			bcrypt.compare(loginAttempt.password, user.password, function(err, checked) {
 				if(checked) {
-					req.session.currentUser = user.first_name;
+					req.session.currentUser={};
+					req.session.currentUser.first_name = user.first_name;
+					req.session.currentUser._id = user._id;
 					res.redirect(301, '../rooms');
 					
 				} else {
@@ -52,16 +59,16 @@ router.post('/login', function(req, res) {
 
 // Show
 
-// router.get('/:id', function(req, res){
-// 	var mongoId = req.params.id;
-// 	User.findOne({_id: mongoId}, function(err, foundUser) {
-// 		if(err) {
-// 			console.log(err);
-// 		} else {
-// 			res.render('users/show', {user: foundUser});
-// 		}
-// 	})
-// });
+router.get('/:id', function(req, res){
+	var mongoId = req.params.id;
+	User.findOne({_id: mongoId}, function(err, foundUser) {
+		if(err) {
+			console.log(err);
+		} else {
+			res.render('users/show', {user: foundUser});
+		}
+	})
+});
 
 router.delete('/logout', function(req, res) {
 	console.log('hey');
