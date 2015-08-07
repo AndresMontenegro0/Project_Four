@@ -1,2 +1,34 @@
 html { height: 100%; }
 body { height: 100%; }
+
+.jumbotron {
+  margin-top: -20px;
+}
+
+.container-fluid {
+  background-color: #221F20;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  background-color: #DB7F2C;
+}
+
+.btn
+{
+  background: #DB7F2C;
+  border-color: #9F418F;
+}
+.btn-primary {
+  background: #DB7F2C;
+  border-color: #31347B;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary {
+
+  background: #DB7F2C;
+  border-color: #31347B;
+ }

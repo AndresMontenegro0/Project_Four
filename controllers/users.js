@@ -18,7 +18,7 @@ router.post("/", function (req, res) {
 		    var newUser = new User(req.body.user);
 		    //now save the new user into our database
 		    newUser.save(function (err, user) {
-		        res.redirect(301, "../");
+		        res.redirect(301, "../rooms");
 		    });
 		})
 	})
@@ -27,6 +27,7 @@ router.post("/", function (req, res) {
 //LOGIN
 
 router.get('/login', function(req, res) {
+	currentUser = req.session.currentUser;
 	res.render('users/login');
 });
 
@@ -36,7 +37,7 @@ router.post('/login', function(req, res) {
 		if(user) {
 			bcrypt.compare(loginAttempt.password, user.password, function(err, checked) {
 				if(checked) {
-					req.session.currentUser = user.first_name + " " + user.last_name;
+					req.session.currentUser = user.first_name;
 					res.redirect(301, '../rooms');
 					
 				} else {
@@ -48,6 +49,19 @@ router.post('/login', function(req, res) {
 		};
 	});
 });
+
+// Show
+
+// router.get('/:id', function(req, res){
+// 	var mongoId = req.params.id;
+// 	User.findOne({_id: mongoId}, function(err, foundUser) {
+// 		if(err) {
+// 			console.log(err);
+// 		} else {
+// 			res.render('users/show', {user: foundUser});
+// 		}
+// 	})
+// });
 
 router.delete('/logout', function(req, res) {
 	console.log('hey');

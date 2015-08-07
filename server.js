@@ -45,7 +45,7 @@ var userController = require('./controllers/users.js');
 server.use('/users', userController);
 
 server.get('/', function(req, res) {
-    res.render('welcome');
+    res.render('welcome', {currentUser: req.session.currentUser});
 })
 
 
