@@ -2,7 +2,6 @@ var express 	= require('express'),
 	router 		= express.Router(),
 	map 		= require('googlemaps'),
 	Room 	= require('../models/room.js');
-	assert	= require('assert');
 
 
 //INDEX
@@ -14,12 +13,14 @@ router.get('/', function(req, res) {
 		} else if(req.session.currentUser) {
 			currentUser = req.session.currentUser;
 			console.log(currentUser);
-			// allRooms = Room.find().count(function(err, count) {
-			// 	  assert.equal(null, err);
-   //      		  assert.equal(2, count);
-			// });
+			allRooms = Room.find().count(function(err, count) {
+				console.log(count);
+				res.render('rooms/index', {
+					rooms: roomsArray,
+					roomCount: count
+				});
+			});
 			// There are <%= allRooms %>
-			res.render('rooms/index', {rooms: roomsArray});
 		} else {
 			res.redirect(301, '/../');
 		};
