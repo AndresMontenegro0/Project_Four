@@ -45,6 +45,7 @@ router.post('/login', function(req, res) {
 					req.session.currentUser={};
 					req.session.currentUser.first_name = user.first_name;
 					req.session.currentUser._id = user._id;
+					req.session.currentUser.last_name = user.last_name;
 					res.redirect(301, '../rooms');
 					
 				} else {

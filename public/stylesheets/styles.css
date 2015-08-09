@@ -32,3 +32,9 @@ button {
   background: #DB7F2C;
   border-color: #31347B;
  }
+
+////////////////////login/////////////////////
+
+.form-horizontal {
+  left: 20%;
+}
