@@ -1,4 +1,5 @@
-var mongoose = require('mongoose')
+var mongoose = require('mongoose'),
+    ttl      = require('mongoose-ttl'),
     Schema   = mongoose.Schema;
 
 var roomSchema = Schema({
@@ -16,6 +17,7 @@ var roomSchema = Schema({
     created_at: { type: Date, default: Date.now }
 });
 
+roomSchema.plugin(ttl, { ttl: 5000 });
 var Room = mongoose.model("Room", roomSchema);
 
 module.exports = Room;
