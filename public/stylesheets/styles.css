@@ -1309,6 +1309,8 @@ outline: 0;
 .navbar-default {
     background-color: #FFF;
     border-color: #CCC;
+     border-bottom: 4px solid #aec62c;
+  margin-bottom: 20px;
 }
 .navbar {
   background:#111;
@@ -1333,11 +1335,11 @@ outline: 0;
 
 #main-slider {
   position: relative;
-  margin-top:90px;
+  margin-top:0px;
 }
 @media(max-width:767px) {
 #main-slider {
-  margin-top:50px;
+  margin-top:0px;
 }
 }
 #main-slider .carousel h2 {
@@ -1636,4 +1638,12 @@ outline: 0;
 
 
 
+
+
+
+////////////////////login/////////////////////
+
+.form-horizontal {
+  left: 20%;
+}
 

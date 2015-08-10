@@ -20,7 +20,6 @@ router.get('/', function(req, res) {
 					roomCount: count
 				});
 			});
-			// There are <%= allRooms %>
 		} else {
 			res.redirect(301, '/../');
 		};
@@ -37,7 +36,7 @@ router.get('/new', function(req, res) {
 
 router.post('/', function(req, res) {
 	var newRoom = new Room(req.body.room);
-	newRoom.organizer = req.session.currentUser;
+	newRoom.organizer = req.session.currentUser.first_name + req.session.currentUser.last_name;
 	newRoom.save(function(err, room) {
 		if(err) {
 			console.log(err);
@@ -56,7 +55,7 @@ router.get('/:id', function(req, res){
 		if(err) {
 			console.log(err);
 		} else {
-			res.render('rooms/show', {room: foundRoom, currentUser: req.session.currentUser});
+			res.render('rooms/show', {room: foundRoom, currentUser: req.session.currentUser.first_name + req.session.currentUser.last_name });
 			// console.log(room);
 		}
 	})
@@ -101,16 +100,6 @@ router.patch('/:id', function(req, res){
 
 module.exports = router;
 
-
-
-
-
-
-// <li> <% if (currentUser) { %>
-//                 <a href="/users/ <%= currentUser %>">Profile</a>
-//                 <% } else { %>
-//                   Profile
-//                 <%};%></li> 
 
 
 

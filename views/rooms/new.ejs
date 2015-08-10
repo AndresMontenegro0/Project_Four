@@ -1,50 +1,94 @@
-<div class="sports_form">
-	<form action="/rooms" method="post">
-		<div class="sports_grp">		
-		<label>Room Type:</label>
-		<input type="text" name="room[room_type]" placeholder="type">
-		</div>
+<div class="container">
+<form class="form-horizontal" action="/rooms" method="post">
+	<div class="col-sm-4 col-sm-offset-4">
+	<div class="input-group form-group">
+	  <span class="input-group-addon" id="basic-addon1">Room type</span>
+	  <input type="text" class="form-control" aria-describedby="basic-addon1" name="room[room_type]" >
+	</div>
+	</div>
 
-		<div class="sports_grp">
-		<label>Price:</label>
-		<input type="number" name="room[price]">
-		</div>
+	<div class="row form-inline form-group">
+	<div class="col-sm-2">
+	<div class="input-group">
+	  <span class="input-group-addon">$</span>
+	  <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" name="room[price]">
+	  <span class="input-group-addon">.00</span>
+	  </div>
+	</div>
 
-		<div class="sports_grp">
-		<label>Max number of People:</label>
-		<input type="text" name="room[max_people]">
-		</div>
+	<div class="col-sm-1">
+	<div class="input-group">
+	  <span class="input-group-addon" id="basic-addon1">No. of people</span>
+	  <input type="text" class="form-control" aria-describedby="basic-addon1" name="room[max_people]">
+	</div>
+	</div>
+	</div>
 
-		<div class="sports_grp">
-		<label>Enter a small Description:</label>
-		<textarea name="room[content]"></textarea>
-		</div>
+	<div class="col-sm-4 col-sm-offset-4">
+	<div class="input-group form-group">
+	<span class="input-group-addon" id="basic-addon1">Description</span>
+	<textarea class="form-control" rows="3" name="room[content]"></textarea>
+	</div>
 
-		<div class="sports_grp">
-		<label>Hotel Name:</label>
-		<input type="text" name="room[hotel_name]">
-		</div>
+	<div class="input-group form-group">
+	  <span class="input-group-addon" id="basic-addon1">Hotel</span>
+	  <input type="text" class="form-control" aria-describedby="basic-addon1" name="room[hotel_name]">
+	</div>
 
-		<div class="sports_grp">
-		<label>Address:</label>
-		<input type="text" name="room[street_address]">
-		</div>
+	<div class="input-group form-group">
+	  <span class="input-group-addon" id="basic-addon1">Address</span>
+	  <input type="text" class="form-control" aria-describedby="basic-addon1" name="room[street_address]">
+	</div>
 
-		<div class="sports_grp">
-		<label>City:</label>
-		<input type="text" name="room[city]">
-		</div>
+	<div class="input-group form-group">
+	  <span class="input-group-addon" id="basic-addon1">City</span>
+	  <input type="text" class="form-control" aria-describedby="basic-addon1" name="room[city]">
+	</div>
 
-		<div class="sports_grp">
-		<label>State:</label>
-		<input type="text" name="room[state]">
-		</div>
+	<div class="input-group form-group">
+	  <span class="input-group-addon" id="basic-addon1">State</span>
+	  <input type="text" class="form-control" aria-describedby="basic-addon1" name="room[state]">
+	</div>
 
-		<div class="sports_grp">
-		<label>Zipcode:</label>
-		<input type="text" name="room[zipcode]">
-		</div>
+	<div class="input-group form-group">
+	  <span class="input-group-addon" id="basic-addon1">Zipcode</span>
+	  <input type="text" class="form-control" aria-describedby="basic-addon1" name="room[zipcode]">
+	</div>
+	</div>
+	<button type="submit" class="btn btn-default">Create</button>
+</form>
 
-		<input type="submit" value="Add this jont"/><br>
-	</form>
 </div>
+
+<div class="footer">
+	    	<div class="container">
+			
+		    	<div class="row">
+				
+		    		<div class="col-footer col-md-4 col-xs-6">
+		    			<h3>Contact Us</h3>
+		    			<p class="contact-us-details">
+	        				<!-- <b>Address:</b>  <br/> -->
+	        				<b>Phone:</b> 212 222 2222<br/>
+	   
+	        				<b>Email:</b> <a href="mailto:info@a.r.montenegro@gmail.com">info@perfect.sl</a>
+	        			</p>
+		    		</div>				
+		    		
+		    	</div>
+		    	<div class="row">
+		    		<div class="col-md-12">
+		    			<div class="footer-copyright">&copy; 2015  Montenegro-Cortes Productions. 
+		    		</div>
+		    	</div>
+		    </div>
+	    </div>
+
+
+
+
+
+
+
+
+
