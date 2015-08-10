@@ -1,4 +1,5 @@
-.map { min-height: 715px; }
+.map { min-height: 715px;
+min-width: 400px; }
 
 .infobox-wrapper {
     display:none;
@@ -18,8 +19,3 @@
     -webkit-box-shadow: 0 0  8px #000;
     box-shadow: 0 0 8px #000;
 }
-
-/*.location-grabber {
-    margin-left: 104px;
-}
-*/
