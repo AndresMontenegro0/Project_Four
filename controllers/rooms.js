@@ -94,7 +94,8 @@ router.get('/:id/edit', function(req, res) {
 router.patch('/:id', function(req, res){
 	var mongoId = req.params.id;
 	var updatedRoom = req.body.room;
-	Room.update({_id: mongoId}, updatedRoom, function(err, foundRoom){
+	var newWalker = req.session.currentUser.first_name + req.session.currentUser.last_name;
+	Room.update({_id: mongoId}, updatedRoom, {walker: newWalker}, function(err, foundRoom){
 		if(err) {
 			console.log(err);
 		} else {

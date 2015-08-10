@@ -20,6 +20,9 @@
 		<h2 id="rules">Rules</h2>
 		<p><%= room.max_people %></p>
 	</div>
+	<form action="/rooms/<%=room._id%>/?_method=POST" method="post">
+		<input type="submit" value="RSVP"/><br>
+	</form>
 </div>
 
 
