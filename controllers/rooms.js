@@ -3,6 +3,7 @@ var express 	= require('express'),
 	map 		= require('googlemaps'),
 	Room 	= require('../models/room.js');
 
+
 //INDEX
 
 router.get('/', function(req, res) {

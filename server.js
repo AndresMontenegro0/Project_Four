@@ -11,16 +11,17 @@ var express         = require('express'),
     expressLayouts  = require('express-ejs-layouts');
 
 //This sets it to the porcess PORT. If it's defined on Heroku, otherwise it will go to 3000
-var PORT = process.env.PORT || 3000;
-var MONGOURI = process.env.MONGOLAB_URI || 'mongodb://localhost:27017/Hotel';
+var PORT        = process.env.PORT || 3000;
+var MONGOURI    = process.env.MONGOLAB_URI || 'mongodb://localhost:27017/Hotel';
 
     //SET
 server.set('views', './views');
 server.set('view engine', 'ejs');
+// server.set('host', config.host);
 
 //USE
 //need more explanation for resave and saveUnitialized
-server.use(session( {
+server.use(session({
     secret: 'Hotel',
     resave: true,
     saveUnitialized: false
@@ -49,9 +50,9 @@ server.get('/', function(req, res) {
 
 
 //CATCH ALL ROUTES
-// server.use(function(req, res) {
-//     res.send("You lost?");
-// });
+server.use(function(req, res) {
+    res.send("You lost?");
+});
 
 //DATABASE + server
 mongoose.connect(MONGOURI);
