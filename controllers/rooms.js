@@ -8,6 +8,11 @@ var express 	= require('express'),
 
 router.get('/', function(req, res) {
 	Room.find({}, function(err, roomsArray) {
+		var expire = Room.createdAt + 600*1000;
+		var nowDate = Date.now();
+		if( nowDate - expire == 432000000) {
+			Room.remove();
+		};
 		if(err) {
 			console.log(err);
 		} else if(req.session.currentUser) {

@@ -16,8 +16,6 @@ var roomSchema = Schema({
     createdAt: { type: Date, default: Date.now }
 });
 
-// roomSchema.plugin(ttl, { ttl: 5000 });
-roomSchema.index({ createdAt: 1 }, { expireAfterSeconds: 43200 });
 var Room = mongoose.model("Room", roomSchema);
 
 module.exports = Room;
