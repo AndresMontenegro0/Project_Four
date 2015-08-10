@@ -6,7 +6,7 @@
 </div>
 <div class="container">
 <div id="scroll-rooms row">
-	<div class="col-lg-8 col-md-6">
+	<div class="col-lg-5 col-md-7">
 	<div id="create-article">
 		<button type="button" class="btn btn-primary"><a href="/rooms/new">Create new Rooms</a></button>
 	</div>
@@ -21,17 +21,22 @@
 					<h4 class="list-group-item-heading"><%= room.room_type %></h4>
 				</a>
 			    
-			    <%= room.hotel_name%>
-			    <%= room.organizer%>
+			    <%= room.hotel_name%> <br>
+			    Manager: <%= room.organizer%> <br>
 			    <a href='' class="location-grabber"><%= room.street_address + ', ' + room.city + ', ' + room.state + ' ' + room.zipcode %></a> 
 			</li>
 		<% }); %>
 	</ul>
 	</div>
-	<div class="col-lg-4 col-md-6">
+	<div class="col-lg-7 col-md-6">
 		<div id="map-canvas" class="map"></div>
 	</div>
-</div>
  </div>
-
+        			<% rooms.forEach(function(room, i) { %>
+<div class="infobox-wrapper">
+    			<div id="infobox">
+        			<%= room.room_type %>
+    			</div>
+			</div>
+        			<% }); %>
 <script type="text/javascript" src="/javascripts/map.js"></script>
