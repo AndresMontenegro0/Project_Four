@@ -2,14 +2,17 @@
   <div class="container">
     Welcome <%= currentUser.first_name %> <br>
     There are <%= roomCount %> rooms available
+    <div id="create-article">
+		<a class="btn btn-md animation animated-item-1" href="/rooms/new">Create New Listing</a>
+	</div>
   </div>
 </div>
 <div class="container">
 <div id="scroll-rooms row">
-	<div class="col-lg-5 col-md-7">
-	<div id="create-article">
+	<div class="col-lg-5 col-md-7" id="scroll-games">
+	<!-- <div id="create-article">
 		<a class="btn btn-md animation animated-item-1" href="/rooms/new">Create New Listing</a>
-	</div>
+	</div> -->
 	<ul class="list-group">
 		<% rooms.forEach(function(room, i) { %>
 			<li class="list-group-item">

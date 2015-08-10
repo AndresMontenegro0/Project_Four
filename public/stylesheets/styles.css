@@ -47,6 +47,12 @@ button {
   .navbar-default .navbar-nav>li>a {
     color: white;
 }
+  #scroll-games {
+    max-height: 713px;
+    padding: 0;
+    overflow-y: scroll; 
+  }
+
 /*--------------------------------------------------------------------------
   General Style
 --------------------------------------------------------------------------*/
