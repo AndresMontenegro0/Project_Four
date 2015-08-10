@@ -1,5 +1,5 @@
 var mongoose = require('mongoose'),
-    // ttl      = require('mongoose-ttl'),
+    ttl      = require('mongoose-ttl'),
     Schema   = mongoose.Schema;
 
 var roomSchema = Schema({
