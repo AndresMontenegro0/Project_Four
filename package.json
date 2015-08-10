@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/dutchisgod/Project_Four",
   "dependencies": {
+    "aws-sdk": "^2.1.44",
     "bcrypt": "^0.8.4",
     "body-parser": "^1.13.3",
     "ejs": "^2.3.3",
