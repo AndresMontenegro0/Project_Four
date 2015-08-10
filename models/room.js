@@ -14,11 +14,15 @@ var roomSchema = Schema({
     content: String,
     price: { type: Number, required: true },
     walker: String,
-    createdAt: { type: Date, default: Date.now }
+    createdAt: { type: Date, default: Date.now, index: { expireAfterSeconds: 43200 } }
 });
 
 // roomSchema.plugin(ttl, { ttl: 5000 });
-roomSchema.index({ createdAt: 1 }, { expireAfterSeconds: 43200 });
+// roomSchema.index({ createdAt: 1 }, { expireAfterSeconds: 43200 });
 var Room = mongoose.model("Room", roomSchema);
+
+mongoose.model('Room').ensureIndexes(function(err) {
+    console.log('ensure index', err)
+})
 
 module.exports = Room;
