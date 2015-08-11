@@ -49,8 +49,10 @@
                 <li data-target="#main-slider" data-slide-to="1"></li>
                 <li data-target="#main-slider" data-slide-to="2"></li>
                 <br/>
+                <% if (currentUser == undefined) { %>
                 <a class="btn btn-md animation animated-item-3" href="/users/login">Log In</a>
                 	<a class="btn btn-md animation animated-item-1" href="users/new">Sign Up</a>
+                <% } %>
             </ol>
             <div class="carousel-inner">
                 <div class="item active" style="background-image: url('https://cdn.kiwicollection.com/media/property/PR000313/xl/000313-14-living-room-night.jpg')">

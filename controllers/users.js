@@ -46,7 +46,12 @@ router.post('/login', function(req, res) {
 					req.session.currentUser.first_name = user.first_name;
 					req.session.currentUser._id = user._id;
 					req.session.currentUser.last_name = user.last_name;
-					res.redirect(301, '../rooms');
+					req.session.currentUser.hotel_name = user.hotel_name;
+					req.session.currentUser.street_address = user.street_address;
+					req.session.currentUser.city = user.city;
+					req.session.currentUser.state = user.state;
+					req.session.currentUser.zipcode = user.zipcode;
+					res.redirect(301, '/rooms');
 					
 				} else {
 					res.redirect(301, '/users/login');

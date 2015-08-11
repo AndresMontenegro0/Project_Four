@@ -39,13 +39,10 @@
         			
 
 	    </div>
-	    <% rooms.forEach(function(room, i) { %>
 <div class="infobox-wrapper">
-    			<div id="infobox">
-        			<%= room.room_type %>
+    			<div id="infobox" class="location-grabber">		<%= rooms.room_type %> 
     			</div>
 			</div>
-        			<% }); %>
 
 <script type="text/javascript" src="/javascripts/map.js"></script>
 
