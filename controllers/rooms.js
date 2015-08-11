@@ -42,6 +42,11 @@ router.get('/new', function(req, res) {
 router.post('/', function(req, res) {
 	var newRoom = new Room(req.body.room);
 	newRoom.organizer = req.session.currentUser.first_name + req.session.currentUser.last_name;
+	newRoom.hotel_name = req.session.currentUser.hotel_name;
+	newRoom.street_address = req.session.currentUser.street_address;
+	newRoom.city = req.session.currentUser.city;
+	newRoom.state = req.session.currentUser.state;
+	newRoom.zipcode = req.session.currentUser.zipcode;
 	newRoom.save(function(err, room) {
 		if(err) {
 			console.log(err);
@@ -93,9 +98,9 @@ router.get('/:id/edit', function(req, res) {
 
 router.patch('/:id', function(req, res){
 	var mongoId = req.params.id;
-	var updatedRoom = req.body.room;
+	// var updatedRoom = req.body.room;
 	var newWalker = req.session.currentUser.first_name + req.session.currentUser.last_name;
-	Room.update({_id: mongoId}, updatedRoom, {walker: newWalker}, function(err, foundRoom){
+	Room.update({_id: mongoId}, {walker: newWalker}, function(err, foundRoom){
 		if(err) {
 			console.log(err);
 		} else {

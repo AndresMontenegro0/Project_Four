@@ -1,29 +1,24 @@
-<div>
-	<% if(currentUser && currentUser == room.organizer) { %>
-	<% include edit_button.ejs %>	
-	<%}%>
-</div>
 
-<div id="main_panel">
-	<h1> <%= room.room_type%> </h1>
-	<div class="overview_content">
-		<h2 id="overview">Overview</h2>
-		<p><%= room.content %></p>
+<div class="container">
+	<div>
+		<% if(currentUser && currentUser == room.organizer) { %>
+		<% include edit_button.ejs %>	
+		<%}%>
 	</div>
-	<hr>
-	<div class="history_content">
-		<h2 id="history">History</h2>
-		<p><%= room.hotel_name %></p>
-	</div>
-	<hr>
-	<div class="rules_content">
-		<h2 id="rules">Rules</h2>
-		<p><%= room.max_people %></p>
-	</div>
-	<form action="/rooms/<%=room._id%>/?_method=POST" method="post">
-		<input type="submit" value="RSVP"/><br>
-	</form>
-</div>
 
+		<h1> <%= room.room_type%> </h1>
+			<p><%= room.content %></p>
+			<p>Manager: <%= room.organizer %></p>
+			<p><%= room.price %></p>
+			<p><%= room.street_address %> <%= room.city %> <%= room.state %> <%= room.zipcode %></p>
+
+			<p><%= room.hotel_name %></p>
+			<p><%= room.max_people %></p>
+			<p><%= room.walker %></p>
+		<form action="/rooms/<%=room._id%>/?_method=PATCH" method="post">
+			<input type="submit" value="RSVP"/><br>
+		</form>
+	</div>
+</div>
 
 
